@@ -1,4 +1,4 @@
-# PCTO
+# PCTO Kotlin
 
 ## Useful Information
 
@@ -104,4 +104,4 @@ al numbers = listOf(1, -2, 3, -4, 5, -6)
 val evenOdd = numbers.partition { it % 2 == 0 }
 val (positives, negatives) = numbers.partition { it > 0 }
 ```
-Where partition splits the true cases in the `positives` variable and the false cases into the `negatives` variable.
+Where partition splits the `true` cases in the `positives` variable and the `false` cases into the `negatives` variable.
