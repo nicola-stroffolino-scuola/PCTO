@@ -7,15 +7,29 @@
 The compiler automatically sets all components (it's called type coercion) and the result type to the widest type in the expression.
 ![type coercion](https://ucarecdn.com/f6fd5591-06db-4ba1-a67f-9c6bfcffd526/)
 
+When assigning to a variable an operation between two different sized numbers **type coercion** accours, and the result before the assignment assumes the size of the "biggest" number, for example :
+```kt
+val b1: Byte = 5
+val s1: Short = 2 + b1   // Line 3
+val s2: Short = 10 + 3L  // Line 4
+```
+Where :
++ **Line 3** : 2 is an `Int`and b1 is a `Byte`, type coercion will result in 7 as `Int`
++ **Line 4** : 10 is an `Int` and 3L is a `Long`, type coercion will result in 13 as `Long`
+
+Both the results that will be assigned to a `Short` variable will give a compile error.
+
 ### Range Wrapping
 
 The **Byte** data type can't handle numbers beyond this range -128..127, to work around this the compiler will **wrap around** when encountering a number larger than that range and continue counting, so (128 becomes -128) and (129 becomes -127), and so on.
 This is how the compiler counts: 126 127 -128 -127 -126 -125 -124 -123 -122 -121 -120 -119 .... 0 1 2 3... 127 -128 ...
-
-In our case, we can do the distance from 0 to 127 but from 128 to 200 we wrap around and keep counting 
-200 - 128 = 72, so to find our result we start counting from -128 and add 72
-
-
+In fact :
+```kt
+val a: Byte = 100
+val b: Byte = (a + a).toByte()
+```
+The value stored in `b` will be -56, because in our case we have to wrap around the range from 128 to 200 and keep counting.
+200 - 128 = 72, so to find our result we start counting from -128 and add 72 to make -56.
 
 ## Mind Blowing Code Examples
 
