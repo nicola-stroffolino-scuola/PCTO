@@ -39,6 +39,68 @@ d += 1
 println(d) // -2147483648
 ```
 
+### "Unsafe" cast operator
+
+Usually, the cast operator throws an exception if the cast isn't possible and so, it's called unsafe.
+The unsafe cast in Kotlin is done by the infix operator `as`.
+```kt
+val x: String = y as String
+```
+Note that null cannot be cast to String, as this type is not nullable. 
+If y is null, the code above throws an exception. 
+To make code like this correct for null values, use the nullable type on the right-hand side of the cast:
+```kt
+val x: String? = y as String?
+```
+
+### "Safe" (nullable) cast operator
+
+To avoid exceptions, use the safe cast operator as?, which returns null on failure.
+```kt
+val x: String? = y as? String
+```
+Note that despite the fact that the right-hand side of as? is a non-null type String, the result of the cast is nullable.
+
+### Elvis Operator
+
+When you have a nullable reference, `b`, you can say "if `b` is not `null`, use it, otherwise use some non-null value" :
+```kt
+val l: Int = if (b != null) b.length else -1
+```
+Instead of writing the complete `if` expression, you can also express this with the Elvis operator `?:` :
+```kt
+val l = b?.length ?: -1
+```
+If the expression to the left of `?:` is not `null`, the Elvis operator returns it, otherwise it returns the expression to the right. 
+Note that the expression on the right-hand side is evaluated only if the left-hand side is `null`.
+
+Since `throw` and `return` are expressions in Kotlin, they can also be used on the right-hand side of the Elvis operator. 
+This can be handy, for example, when checking function arguments:
+```kt
+fun foo(node: Node): String? {
+    val parent = node.getParent() ?: return null
+    val name = node.getName() ?: throw IllegalArgumentException("name expected")
+    // ...
+}
+```
+
+### The !! Operator
+
+The third option is for NPE-lovers : the not-null assertion operator (`!!`) converts any value to a non-null type and throws an exception if the value is `null`. 
+You can write `b!!`, and this will return a non-null value of `b` (for example, a `String` in our example) or throw an NPE if `b` is `null`:
+```kt
+val l = b!!.length
+```
+Thus, if you want an NPE, you can have it, but you have to ask for it explicitly and it won't appear out of the blue.
+
+
+
+
+
+
+
+
+
 ## Mind Blowing Code Examples
 
 ### Read-only Parameters
