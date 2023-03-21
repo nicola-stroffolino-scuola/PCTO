@@ -1,5 +1,22 @@
 # PCTO
 
+## Useful Information
+
+### Type Coercion
+
+The compiler automatically sets all components (it's called type coercion) and the result type to the widest type in the expression.
+![type coercion](https://ucarecdn.com/f6fd5591-06db-4ba1-a67f-9c6bfcffd526/)
+
+### Range Wrapping
+
+The **Byte** data type can't handle numbers beyond this range -128..127, to work around this the compiler will **wrap around** when encountering a number larger than that range and continue counting, so (128 becomes -128) and (129 becomes -127), and so on.
+This is how the compiler counts: 126 127 -128 -127 -126 -125 -124 -123 -122 -121 -120 -119 .... 0 1 2 3... 127 -128 ...
+
+In our case, we can do the distance from 0 to 127 but from 128 to 200 we wrap around and keep counting 
+200 - 128 = 72, so to find our result we start counting from -128 and add 72
+
+
+
 ## Mind Blowing Code Examples
 
 ### Read-only Parameters
@@ -87,4 +104,4 @@ al numbers = listOf(1, -2, 3, -4, 5, -6)
 val evenOdd = numbers.partition { it % 2 == 0 }
 val (positives, negatives) = numbers.partition { it > 0 }
 ```
-Where partition splits the true cases in the positives variable and the false cases into the negatives variable.
+Where partition splits the true cases in the `positives` variable and the false cases into the `negatives` variable.
