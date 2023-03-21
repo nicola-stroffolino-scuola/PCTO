@@ -93,6 +93,20 @@ val l = b!!.length
 ```
 Thus, if you want an NPE, you can have it, but you have to ask for it explicitly and it won't appear out of the blue.
 
+### Naming Rules
+
+Kotlin has several rules:
++ Names are case-sensitive (number is not the same as Number);
++ Each name can include only letters, digits, and underscores;
++ A name cannot start with a digit;
++ A name cannot be a keyword (for example, val, var, fun are illegal).
+
+So, no whitespaces are allowed in a variable's name. You can use spaces only with backticks:
+```kt
+val `good name` = 5
+val bad name = 2 // will not work
+```
+
 
 
 
