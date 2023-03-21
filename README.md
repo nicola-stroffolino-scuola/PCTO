@@ -101,7 +101,7 @@ Thus, if you want an NPE, you can have it, but you have to ask for it explicitly
 
 
 
-## Mind Blowing Code Examples
+## Code Examples
 
 ### Read-only Parameters
 
@@ -141,6 +141,8 @@ for(i in 0 until 3)
 for(i in 2..8 step 2)
 
 for (i in 3 downTo 0)
+
+repeat(i)
 ```
 Loops use **ranges** to know how many times an instruction should be executed.
 
