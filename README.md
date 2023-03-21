@@ -31,6 +31,14 @@ val b: Byte = (a + a).toByte()
 The value stored in `b` will be -56, because in our case we have to wrap around the range from 128 to 200 and keep counting.
 200 - 128 = 72, so to find our result we start counting from -128 and add 72 to make -56.
 
+Another example would be :
+```kt
+// MAX_VALUE: Int = 2147483647
+var d: Int = 2147483647
+d += 1
+println(d) // -2147483648
+```
+
 ## Mind Blowing Code Examples
 
 ### Read-only Parameters
