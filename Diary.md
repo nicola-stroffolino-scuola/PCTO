@@ -12,3 +12,8 @@
 + Continued learning Kotlin through its Documentation and Examples
 + Completed the [Zookeeper](https://hyperskill.org/projects/196) project on Hyperskill
 + Started the [Parking Lot](https://hyperskill.org/projects/75) Hyperskill course
+
+## Day 3
+
++ Complete the Parking Lot Project in Hyperskill course
++ Still yet to finish the theory of the project
