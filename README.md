@@ -107,6 +107,9 @@ val `good name` = 5
 val bad name = 2 // will not work
 ```
 
+### Very Good Lists vs Arrays Explanation
+
+Source : [Stack Overflow](https://stackoverflow.com/a/36263748)
 
 
 
