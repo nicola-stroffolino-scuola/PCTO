@@ -21,3 +21,4 @@
 ## Day 4
 
 + Completed the Parking Lot course
++ Continued learning Kotlin through its Documentation and Examples
