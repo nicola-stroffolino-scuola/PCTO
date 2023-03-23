@@ -15,5 +15,9 @@
 
 ## Day 3
 
-+ Complete the Parking Lot Project in Hyperskill course
++ Completed the Parking Lot project
 + Still yet to finish the theory of the project, yes is skipped everything
+
+## Day 4
+
++ Completed the Parking Lot course
