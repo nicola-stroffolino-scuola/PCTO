@@ -1,8 +1,6 @@
 # PCTO Kotlin
 
-## Useful Information
-
-### Type Coercion
+## Type Coercion
 
 The compiler automatically sets all components (it's called type coercion) and the result type to the widest type in the expression.
 ![type coercion](https://ucarecdn.com/f6fd5591-06db-4ba1-a67f-9c6bfcffd526/)
@@ -19,7 +17,7 @@ Where :
 
 Both the results that will be assigned to a `Short` variable will give a compile error.
 
-### Range Wrapping
+## Range Wrapping
 
 The **Byte** data type can't handle numbers beyond this range -128..127, to work around this the compiler will **wrap around** when encountering a number larger than that range and continue counting, so (128 becomes -128) and (129 becomes -127), and so on.
 This is how the compiler counts: 126 127 -128 -127 -126 -125 -124 -123 -122 -121 -120 -119 .... 0 1 2 3... 127 -128 ...
@@ -39,7 +37,7 @@ d += 1
 println(d) // -2147483648
 ```
 
-### "Unsafe" cast operator
+## "Unsafe" cast operator
 
 Usually, the cast operator throws an exception if the cast isn't possible and so, it's called unsafe.
 The unsafe cast in Kotlin is done by the infix operator `as`.
@@ -53,7 +51,7 @@ To make code like this correct for null values, use the nullable type on the rig
 val x: String? = y as String?
 ```
 
-### "Safe" (nullable) cast operator
+## "Safe" (nullable) cast operator
 
 To avoid exceptions, use the safe cast operator as?, which returns null on failure.
 ```kt
@@ -61,7 +59,7 @@ val x: String? = y as? String
 ```
 Note that despite the fact that the right-hand side of as? is a non-null type String, the result of the cast is nullable.
 
-### Elvis Operator
+## Elvis Operator
 
 When you have a nullable reference, `b`, you can say "if `b` is not `null`, use it, otherwise use some non-null value" :
 ```kt
@@ -84,7 +82,7 @@ fun foo(node: Node): String? {
 }
 ```
 
-### The !! Operator
+## The !! Operator
 
 The third option is for NPE-lovers : the not-null assertion operator (`!!`) converts any value to a non-null type and throws an exception if the value is `null`. 
 You can write `b!!`, and this will return a non-null value of `b` (for example, a `String` in our example) or throw an NPE if `b` is `null`:
@@ -93,7 +91,7 @@ val l = b!!.length
 ```
 Thus, if you want an NPE, you can have it, but you have to ask for it explicitly and it won't appear out of the blue.
 
-### Naming Rules
+## Naming Rules
 
 Kotlin has several rules:
 + Names are case-sensitive (number is not the same as Number);
@@ -107,10 +105,17 @@ val `good name` = 5
 val bad name = 2 // will not work
 ```
 
-### Very Good Lists vs Arrays Explanation
+## Very Good Lists vs Arrays Explanation
 
 Source : [Stack Overflow](https://stackoverflow.com/a/36263748)
 
+## Try is an Expression
+
+Unlike in Java and many other languages `try` can be an expression in Kotlin. This means that it may have a return value:
+```kt
+val number: Int = try { "abc".toInt() } catch (e: NumberFormatException) { 0 }
+println(number) // 0
+```
 
 
 
@@ -118,16 +123,14 @@ Source : [Stack Overflow](https://stackoverflow.com/a/36263748)
 
 
 
-## Code Examples
-
-### Read-only Parameters
+## Read-only Parameters
 
 ```kt
 class Contact(val id: Int, var email: String) 
 ```
 Where the `val` **keyword** is used to declare read-only variables.
 
-### When Statement with Any Parameter
+## When Statement with Any Parameter
 
 ```kt
 fun main() {
@@ -148,7 +151,7 @@ fun whenAssign(obj: Any): Any {
 }
 ```
 
-### Various Forms of Loops
+## Various Forms of Loops
 
 ```kt
 for(i in 0..3)
@@ -174,11 +177,11 @@ if (x !in 6..10) {
 }
 ```
 
-### Equality
+## Equality
 
 Kotlin uses `==` for structural comparison and `===` for referential comparison.
 
-### Conditional Expressions
+## Conditional Expressions
 
 There is no ternary operator `condition ? then : else` in Kotlin. Instead, `if` may be used as an expression :
 
