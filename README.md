@@ -3,6 +3,7 @@
 ## Type Coercion
 
 The compiler automatically sets all components (it's called type coercion) and the result type to the widest type in the expression.
+
 ![type coercion](https://ucarecdn.com/f6fd5591-06db-4ba1-a67f-9c6bfcffd526/)
 
 When assigning to a variable an operation between two different sized numbers **type coercion** accours, and the result before the assignment assumes the size of the "biggest" number, for example :
