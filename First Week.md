@@ -22,3 +22,7 @@
 
 + Completed the Parking Lot course
 + Continued learning Kotlin through its Documentation and Examples
+
+## Day 5
+
++ Started the [Coffee Machine](https://hyperskill.org/projects/67) Hyperskill course
