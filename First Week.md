@@ -26,3 +26,4 @@
 ## Day 5
 
 + Started the [Coffee Machine](https://hyperskill.org/projects/67) Hyperskill course
++ Completed the Coffee Machine project
