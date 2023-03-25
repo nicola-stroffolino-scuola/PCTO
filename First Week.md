@@ -1,6 +1,6 @@
 # First Week
 
-Period : March 20th - March 24th
+📆 `March 20th` to `March 24th`
 
 ## Day 1
 
