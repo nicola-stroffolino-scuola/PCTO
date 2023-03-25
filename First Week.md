@@ -1,5 +1,7 @@
 # First Week
 
+Period : March 20th - March 24th
+
 ## Day 1
 
 + Solo learning the programming language **Kotlin** through its [Documentation](https://kotlinlang.org/docs/home.html)
