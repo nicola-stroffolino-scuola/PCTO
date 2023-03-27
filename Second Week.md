@@ -4,4 +4,4 @@
 
 ## Day 1
 
-+ Been commissioned to research information about the [Keycloak](https://www.keycloak.org/) authentication system and how to implement it to a Kotlin Spring Application
++ Commissioned to research information about the [Keycloak](https://www.keycloak.org/) authentication system and how to implement it's features to a Kotlin Spring Application
