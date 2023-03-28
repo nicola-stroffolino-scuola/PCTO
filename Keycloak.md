@@ -30,7 +30,16 @@ Keycloak provides a REST API for generating and refreshing access tokens. We can
   password:<your_password>
   grant_type:password
   ```
-  Meaning that the URL will result in something like http://localhost:8081/realms/EngynyaRealm/protocol/openid-connect/token?client_id=engynya-login&username=user1&password=12345&grant_type=password. Where :
+  Meaning that that an ideal curl POST request would look like :
+  ```curl
+  curl -L -X POST 'http://localhost:8081/realms/EngynyaRealm/protocol/openid-connect/token' \
+  -H 'Content-Type: application/x-www-form-urlencoded' \
+  --data-urlencode 'client_id=engynya-login' \
+  --data-urlencode 'grant_type=password' \
+  --data-urlencode 'username=user1' \
+  --data-urlencode 'password=12345'
+  ```
+  Where :
   - `client_id` is the one with set up in the *Clients* page, in our case ***engynya-login***
   - `username` is self-explanatory, in our case it's ***user1***
   - `password` is the user password, in our case it's ***12345***
