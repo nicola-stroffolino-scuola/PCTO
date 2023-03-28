@@ -4,7 +4,7 @@
 
 + Go to https://start.spring.io/
 
----
+## Setting up Keycloak
 
 + Create a Realm with a preferred name, in our case it will be ***EngynyaRealm***.
 
@@ -18,6 +18,24 @@
   - Once created we'll be directed to the user *Details* page and from there we'll switch to the *Credentials* tab.
   - There we can setup an initial password for the user for him to be able to login.
   - Finally we'll navigate to the *Role Mappings* tab and there we'll be assigning the ***user*** role to our ***user1***.
+
+## Generating Access Tokens
+
+Keycloak provides a REST API for generating and refreshing access tokens. We can easily use this API to create our own login page.
+
++ First things first we need to acquire an access token by sendin a POST request to http://localhost:8080/realms/EngynyaRealm/protocol/openid-connect/token. The request should have this body in a **x-www-form-urlencoded** format :
+  ```
+  client_id:<your_client_id>
+  username:<your_username>
+  password:<your_password>
+  grant_type:password
+  ```
+  Meaning that the URL will result in something like http://localhost:8080/realms/EngynyaRealm/protocol/openid-connect/token?client_id=engynya-login&username=user1&password=12345&grant_type=password. Where :
+  - `client_id` is the one with set up in the *Clients* page, in our case ***engynya-login***
+  - `username` is self-explanatory, in our case it's ***user1***
+  - `password` is the user password, in our case it's ***12345***
+
+
 
 ---
 
