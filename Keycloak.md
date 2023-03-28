@@ -53,12 +53,24 @@ Keycloak provides a REST API for generating and refreshing access tokens. We can
   - E.g. I changed it to https\://services.gradle.org/distributions/gradle-8.0.2-bin.zip
 + Add these variables to your `application.properties` file located in `/src/main/resources/`:
   ```properties
-  spring.security.oauth2.client.registration.keycloak.client-id=login-app # 1
-  spring.security.oauth2.client.registration.keycloak.authorization-grant-type=authorization_code # 2
-  spring.security.oauth2.client.registration.keycloak.scope=openid # 3
+  # Client Registration Configuration
+  spring.security.oauth2.client.registration.keycloak.client-id=engynya-login
+  spring.security.oauth2.client.registration.keycloak.authorization-grant-type=authorization_code
+  spring.security.oauth2.client.registration.keycloak.scope=openid
+
+  # OIDC Provider Configuration
+  spring.security.oauth2.client.provider.keycloak.issuer-uri=http://localhost:8081/realms/EngynyaRealm
+  spring.security.oauth2.client.provider.keycloak.user-name-attribute=preferred_username
+  
+  # Validating JWT Token
+  spring.security.oauth2.resourceserver.jwt.issuer-uri=http://localhost:8081/realms/EngynyaRealm
   ```
-  1. The value we specify in `client-id` matches the client we named in the admin console.
-  2. 
+  Where :
+  - The value we specify in `client-id` matches the client we named in the admin console.
+  - The `keycloak.issuer-uri` and `jwt.issuer-uri` are the URIs or the authorization server.
+
+
+
 ---
 
 + https://gist.github.com/ThomasVitale/5544d276479d3895f4e8632720f5f92b
