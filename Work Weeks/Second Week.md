@@ -12,4 +12,12 @@
 
 ## Day 3
 
-+ Continued working on the previous day activity.
++ Continued working on the Spring application.
+
+## Day 4
+
++ Continued working on the Spring application.
+
+## Day 5
+
++ Continued working on the Spring application.
