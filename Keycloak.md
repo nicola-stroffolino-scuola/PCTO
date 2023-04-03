@@ -76,3 +76,4 @@ Keycloak provides a REST API for generating and refreshing access tokens. We can
 + https://gist.github.com/ThomasVitale/5544d276479d3895f4e8632720f5f92b
 + Start keycloack server bin/kc.sh start-dev --http-port=8081
 + Keycloak Endpoints: https://github.com/keycloak/keycloak/tree/9cbc335b68718443704854b1e758f8335b06c242/services/src/main/java/org/keycloak/protocol/oidc/endpoints
++ https://stackoverflow.com/questions/75384815/spring-boot-application-always-redirect-to-login-despite-request-having-valid-ac
