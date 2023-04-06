@@ -8,16 +8,8 @@
 
 ## Day 2
 
-+ Created a Spring application that implements the Keycloak authentication system.
++ Created a Spring application that miserably fails to implement the Keycloak authentication system.
 
-## Day 3
-
-+ Continued working on the Spring application.
-
-## Day 4
-
-+ Continued working on the Spring application.
-
-## Day 5
+## Days 3 to 5
 
 + Continued working on the Spring application.
